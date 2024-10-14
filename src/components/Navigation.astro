@@ -1,0 +1,47 @@
+<nav>
+  <ul>
+    <a href="/texts">
+      <li>Тексты</li>
+    </a>
+    <a href="/">
+      <li>Фото</li>
+    </a>
+    <a href="/">
+      <li>Проекты</li>
+    </a>
+  </ul>
+</nav>
+
+<style>
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    @media (min-width: 1024px) {
+      flex-direction: row;
+    }
+  }
+
+  li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 12px;
+    width: 200px;
+    height: 180px;
+    border-radius: 4px;
+    box-shadow:
+      rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+      rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+    font-size: 18px;
+    letter-spacing: 5px;
+    text-align: center;
+
+    @media (min-width: 1024px) {
+      font-size: 25px;
+      width: 320px;
+      height: 300px;
+    }
+  }
+</style>
