@@ -1,0 +1,29 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "@layouts/Layout.astro";
+import ToMain from "@components/ToMain.astro";
+
+const versLibres = await getCollection("versLibres");
+---
+
+<Layout title="Тексты">
+  <main>
+    <ToMain />
+    <span>Верлибры [{versLibres.length}]</span>
+    {versLibres.map(({ slug, data }) => (
+      <li>
+        <a href=`/texts/${slug}`>{data.title}</a>
+      </li>
+      ))
+    }
+  </main>
+</Layout>
+
+<style>
+  span {
+    display: inline-block;
+    font-size: 20px;
+    margin:20px 0 10px;
+    font-weight: 600;
+  }
+</style>
