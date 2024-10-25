@@ -1,0 +1,19 @@
+<button class="back-button">
+  <span>&#8592;</span>{" "}Назад
+</button>
+
+<style>
+  .back-button {
+    display: block;
+    margin-bottom: 20px;
+    font-size: 18px;
+  }
+</style>
+
+<script>
+  const button = document.querySelector(".back-button");
+
+  button?.addEventListener("click", () => {
+    window.history.back();
+  });
+</script>

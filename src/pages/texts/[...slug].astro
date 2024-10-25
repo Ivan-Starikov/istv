@@ -1,6 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 import Layout from "@layouts/Layout.astro";
+import BackNavigation from "@components/BackNavigation.astro";
 
 export async function getStaticPaths() {
   const entries = await getCollection("versLibres");
@@ -15,5 +16,6 @@ const { Content } = await entry.render();
 ---
 
 <Layout title=`${entry.data.title}`>
+  <BackNavigation />
   <Content />
 </Layout>

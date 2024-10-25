@@ -1,21 +1,26 @@
 ---
 import { getCollection } from "astro:content";
 import Layout from "@layouts/Layout.astro";
-import ToMain from "@components/ToMain.astro";
+import BackNavigation from "@components/BackNavigation.astro";
+import Toggle from "@components/Toggle.astro";
 
 const versLibres = await getCollection("versLibres");
 ---
 
 <Layout title="Тексты">
   <main>
-    <ToMain />
-    <span>Верлибры [{versLibres.length}]</span>
-    {versLibres.map(({ slug, data }) => (
-      <li>
-        <a href=`/texts/${slug}`>{data.title}</a>
-      </li>
-      ))
-    }
+    <BackNavigation />
+    <!-- <Toggle> -->
+      <span slot='toggleElement'>Верлибры [{versLibres.length}]</span>
+      <ul slot='toggleContent'>
+        {versLibres.map(({ slug, data }) => (
+          <li>
+            <a href=`/texts/${slug}`>{data.title}</a>
+          </li>
+          ))
+        }
+      </ul>
+    <!-- </Toggle> -->
   </main>
 </Layout>
 
@@ -23,7 +28,6 @@ const versLibres = await getCollection("versLibres");
   span {
     display: inline-block;
     font-size: 20px;
-    margin:20px 0 10px;
     font-weight: 600;
   }
 </style>
