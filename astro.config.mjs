@@ -5,5 +5,4 @@ import mdx from "@astrojs/mdx";
 export default defineConfig({
   integrations: [mdx()],
   site: "https://Ivan-Starikov.github.io",
-  base: "istv",
 });
